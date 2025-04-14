@@ -111,7 +111,7 @@ try:
                     width="auto"
                 ),
                 dbc.Col(
-                    html.H2("OFTW Dashboard", style={'marginLeft': '10px'}),
+                    html.H2("OFTW Dashboard", style={'marginLeft': '10px', 'color': '#2C3E50'}),
                     width="auto",
                 ),
             ], align='center', className="g-0"),
@@ -321,20 +321,20 @@ try:
         ),
         dcc.Tabs([
             dcc.Tab(label='Overview', style={'padding': '20px'}, children=[
-                html.H1("OFTW Dashboard", id='dashboard-title', style={'textAlign': 'center', 'marginBottom': '30px'}),
-                html.H3("Key Metrics (2025 Targets)", style={'textAlign': 'center', 'marginBottom': '30px'}),
+                html.H1("OFTW Dashboard", id='dashboard-title', style={'textAlign': 'center', 'marginBottom': '30px', 'color': '#2C3E50'}),
+                html.H3("Key Metrics (2025 Targets)", id='key-metrics-title', style={'textAlign': 'center', 'marginBottom': '30px', 'color': '#2C3E50'}),
                 dbc.Row([
                     dbc.Col([
                         dbc.Card(id='money-moved-card', children=[
                             dbc.CardBody([
                                 html.H5("Total Counterfactual Money Moved (YTD)", id='money-moved-title',
-                                        style={'textAlign': 'center', 'fontSize': 18}),
+                                        style={'textAlign': 'center', 'fontSize': 18, 'color': '#2C3E50'}),
                                 html.P(f"${total_mm_ytd:,.2f}", id='money-moved-value',
-                                       style={'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold'}),
+                                       style={'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold', 'color': '#2C3E50'}),
                                 html.P(f"({percent_mm:.1f}% of ${goal_mm:,.0f} goal)", id='money-moved-percent',
-                                       style={'textAlign': 'center', 'fontSize': 14})
+                                       style={'textAlign': 'center', 'fontSize': 14, 'color': '#2C3E50'})
                             ])
-                        ], style={'marginBottom': '20px'}),
+                        ], style={'marginBottom': '20px', 'backgroundColor': '#FFFFFF', 'border': '1px solid #ddd'}),
                         dbc.Tooltip(
                             "Sum of counterfactual money moved (USD) for payments from July 1, 2024, to March 9, 2025, "
                             "excluding 'One for the World Discretionary Fund' and 'One for the World Operating Costs' portfolios.",
@@ -346,13 +346,13 @@ try:
                         dbc.Card(id='arr-total-card', children=[
                             dbc.CardBody([
                                 html.H5("Active Annualized Run Rate (ARR)", id='arr-total-title',
-                                        style={'textAlign': 'center', 'fontSize': 18}),
+                                        style={'textAlign': 'center', 'fontSize': 18, 'color': '#2C3E50'}),
                                 html.P(f"${total_arr:,.2f}", id='arr-total-value',
-                                       style={'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold'}),
+                                       style={'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold', 'color': '#2C3E50'}),
                                 html.P(f"({percent_arr:.1f}% of ${goal_arr:,.0f} goal)", id='arr-total-percent',
-                                       style={'textAlign': 'center', 'fontSize': 14})
+                                       style={'textAlign': 'center', 'fontSize': 14, 'color': '#2C3E50'})
                             ])
-                        ], style={'marginBottom': '20px'}),
+                        ], style={'marginBottom': '20px', 'backgroundColor': '#FFFFFF', 'border': '1px solid #ddd'}),
                         dbc.Tooltip(
                             "Sum of USD amounts for active donor pledges, annualized based on pledge frequency.",
                             target='arr-total-card',
@@ -363,13 +363,13 @@ try:
                         dbc.Card(id='attrition-rate-card', children=[
                             dbc.CardBody([
                                 html.H5("Pledge Attrition Rate", id='attrition-rate-title',
-                                        style={'textAlign': 'center', 'fontSize': 18}),
+                                        style={'textAlign': 'center', 'fontSize': 18, 'color': '#2C3E50'}),
                                 html.P(f"{attrition_rate:.2f}%", id='attrition-rate-value',
-                                       style={'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold'}),
+                                       style={'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold', 'color': '#2C3E50'}),
                                 html.P(f"({percent_attrition:.1f}% of {goal_attrition}% target)", id='attrition-rate-percent',
-                                       style={'textAlign': 'center', 'fontSize': 14})
+                                       style={'textAlign': 'center', 'fontSize': 14, 'color': '#2C3E50'})
                             ])
-                        ], style={'marginBottom': '20px'}),
+                        ], style={'marginBottom': '20px', 'backgroundColor': '#FFFFFF', 'border': '1px solid #ddd'}),
                         dbc.Tooltip(
                             "Percentage of pledges with status 'Payment failure' or 'Churned donor' out of total unique pledges.",
                             target='attrition-rate-card',
@@ -382,13 +382,13 @@ try:
                         dbc.Card(id='active-donors-card', children=[
                             dbc.CardBody([
                                 html.H5("Total Active Donors", id='active-donors-title',
-                                        style={'textAlign': 'center', 'fontSize': 18}),
+                                        style={'textAlign': 'center', 'fontSize': 18, 'color': '#2C3E50'}),
                                 html.P(f"{active_donors:,}", id='active-donors-value',
-                                       style={'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold'}),
+                                       style={'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold', 'color': '#2C3E50'}),
                                 html.P(f"({percent_active_donors:.1f}% of {goal_active_donors} goal)", id='active-donors-percent',
-                                       style={'textAlign': 'center', 'fontSize': 14})
+                                       style={'textAlign': 'center', 'fontSize': 14, 'color': '#2C3E50'})
                             ])
-                        ], style={'marginBottom': '20px'}),
+                        ], style={'marginBottom': '20px', 'backgroundColor': '#FFFFFF', 'border': '1px solid #ddd'}),
                         dbc.Tooltip(
                             "Number of unique donors with active pledge status within the YTD period.",
                             target='active-donors-card',
@@ -399,13 +399,13 @@ try:
                         dbc.Card(id='active-pledges-card', children=[
                             dbc.CardBody([
                                 html.H5("Total Active Pledges", id='active-pledges-title',
-                                        style={'textAlign': 'center', 'fontSize': 18}),
+                                        style={'textAlign': 'center', 'fontSize': 18, 'color': '#2C3E50'}),
                                 html.P(f"{total_active_pledges:,}", id='active-pledges-value',
-                                       style={'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold'}),
+                                       style={'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold', 'color': '#2C3E50'}),
                                 html.P(f"({percent_active_pledges:.1f}% of {goal_active_pledges} goal)", id='active-pledges-percent',
-                                       style={'textAlign': 'center', 'fontSize': 14})
+                                       style={'textAlign': 'center', 'fontSize': 14, 'color': '#2C3E50'})
                             ])
-                        ], style={'marginBottom': '20px'}),
+                        ], style={'marginBottom': '20px', 'backgroundColor': '#FFFFFF', 'border': '1px solid #ddd'}),
                         dbc.Tooltip(
                             "Number of unique pledge IDs with 'Active donor' status.",
                             target='active-pledges-card',
@@ -416,13 +416,13 @@ try:
                         dbc.Card(id='chapter-arr-card', children=[
                             dbc.CardBody([
                                 html.H5("Chapter ARR (by Chapter Type)", id='chapter-arr-title',
-                                        style={'textAlign': 'center', 'fontSize': 18}),
+                                        style={'textAlign': 'center', 'fontSize': 18, 'color': '#2C3E50'}),
                                 html.P(f"${total_chapter_arr:,.2f}", id='chapter-arr-value',
-                                       style={'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold'}),
+                                       style={'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold', 'color': '#2C3E50'}),
                                 html.P(f"({percent_chapter_arr:.1f}% of ${goal_chapter_arr:,.0f} goal)", id='chapter-arr-percent',
-                                       style={'textAlign': 'center', 'fontSize': 14})
+                                       style={'textAlign': 'center', 'fontSize': 14, 'color': '#2C3E50'})
                             ])
-                        ], style={'marginBottom': '20px'}),
+                        ], style={'marginBottom': '20px', 'backgroundColor': '#FFFFFF', 'border': '1px solid #ddd'}),
                         dbc.Tooltip(
                             "Sum of USD amounts for active donor pledges, aggregated by chapter type.",
                             target='chapter-arr-card',
@@ -435,13 +435,13 @@ try:
                         dbc.Card(id='total-pledges-card', children=[
                             dbc.CardBody([
                                 html.H5("Total Pledges (Active + Future)", id='total-pledges-title',
-                                        style={'textAlign': 'center', 'fontSize': 18}),
+                                        style={'textAlign': 'center', 'fontSize': 18, 'color': '#2C3E50'}),
                                 html.P(f"{total_pledges_all:,}", id='total-pledges-value',
-                                       style={'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold'}),
+                                       style={'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold', 'color': '#2C3E50'}),
                                 html.P(f"({percent_total_pledges:.1f}% of {goal_total_pledges} goal)", id='total-pledges-percent',
-                                       style={'textAlign': 'center', 'fontSize': 14})
+                                       style={'textAlign': 'center', 'fontSize': 14, 'color': '#2C3E50'})
                             ])
-                        ], style={'marginBottom': '20px'}),
+                        ], style={'marginBottom': '20px', 'backgroundColor': '#FFFFFF', 'border': '1px solid #ddd'}),
                         dbc.Tooltip(
                             "Number of unique pledge IDs with 'Active donor' or 'Pledged donor' status.",
                             target='total-pledges-card',
@@ -452,13 +452,13 @@ try:
                         dbc.Card(id='future-pledges-card', children=[
                             dbc.CardBody([
                                 html.H5("Future Pledges", id='future-pledges-title',
-                                        style={'textAlign': 'center', 'fontSize': 18}),
+                                        style={'textAlign': 'center', 'fontSize': 18, 'color': '#2C3E50'}),
                                 html.P(f"{total_future_pledges:,}", id='future-pledges-value',
-                                       style={'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold'}),
+                                       style={'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold', 'color': '#2C3E50'}),
                                 html.P(f"({percent_future_pledges:.1f}% of {goal_future_pledges} goal)", id='future-pledges-percent',
-                                       style={'textAlign': 'center', 'fontSize': 14})
+                                       style={'textAlign': 'center', 'fontSize': 14, 'color': '#2C3E50'})
                             ])
-                        ], style={'marginBottom': '20px'}),
+                        ], style={'marginBottom': '20px', 'backgroundColor': '#FFFFFF', 'border': '1px solid #ddd'}),
                         dbc.Tooltip(
                             "Number of unique pledge IDs with 'Pledged donor' status.",
                             target='future-pledges-card',
@@ -469,13 +469,13 @@ try:
                         dbc.Card(id='future-arr-card', children=[
                             dbc.CardBody([
                                 html.H5("Future ARR", id='future-arr-title',
-                                        style={'textAlign': 'center', 'fontSize': 18}),
+                                        style={'textAlign': 'center', 'fontSize': 18, 'color': '#2C3E50'}),
                                 html.P(f"${future_arr:,.2f}", id='future-arr-value',
-                                       style={'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold'}),
+                                       style={'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold', 'color': '#2C3E50'}),
                                 html.P(f"({percent_future_arr:.1f}% of ${goal_future_arr:,.0f} goal)", id='future-arr-percent',
-                                       style={'textAlign': 'center', 'fontSize': 14})
+                                       style={'textAlign': 'center', 'fontSize': 14, 'color': '#2C3E50'})
                             ])
-                        ], style={'marginBottom': '20px'}),
+                        ], style={'marginBottom': '20px', 'backgroundColor': '#FFFFFF', 'border': '1px solid #ddd'}),
                         dbc.Tooltip(
                             "Sum of USD amounts for pledged donor contributions, annualized based on pledge frequency.",
                             target='future-arr-card',
@@ -485,7 +485,7 @@ try:
                 ], justify='around', style={'marginBottom': '20px'}),
             ]),
             dcc.Tab(label='Money Moved Breakdowns', style={'padding': '10px'}, children=[
-                html.H2("Money Moved Breakdowns", style={'textAlign': 'center', 'marginBottom': '20px'}),
+                html.H2("Money Moved Breakdowns", id='money-moved-breakdowns-title', style={'textAlign': 'center', 'marginBottom': '20px', 'color': '#2C3E50'}),
                 dcc.Graph(
                     id='monthly-mm-chart',
                     figure=px.line(monthly_mm, x='month', y='counterfactual_mm', title='Monthly Counterfactual Money Moved (YTD)',
@@ -518,7 +518,7 @@ try:
                 ),
             ]),
             dcc.Tab(label='Attrition Analysis', style={'padding': '10px'}, children=[
-                html.H2("Attrition Analysis", style={'textAlign': 'center', 'marginBottom': '20px'}),
+                html.H2("Attrition Analysis", id='attrition-analysis-title', style={'textAlign': 'center', 'marginBottom': '20px', 'color': '#2C3E50'}),
                 dcc.Graph(
                     id='attrition-by-chapter-chart',
                     figure=px.bar(attrition_data, x='frequency', y='attrition_rate', color='donor_chapter',
@@ -535,11 +535,11 @@ try:
                                                                  style={'margin-top': '20px'})], type='default'),
             ]),
             dcc.Tab(label='Data Explorer', style={'padding': '10px'}, children=[
-                html.H3("Merged Data Sample", id='table-title'),
+                html.H3("Merged Data Sample", id='table-title', style={'color': '#2C3E50'}),
                 dbc.Row([
-                    dbc.Col([html.Label("Filter by Donor Chapter:", id='chapter-filter-label'),
+                    dbc.Col([html.Label("Filter by Donor Chapter:", id='chapter-filter-label', style={'color': '#2C3E50'}),
                              dcc.Dropdown(id='chapter-filter', options=donor_chapters, value='All', style={'width': '100%'})], width=3),
-                    dbc.Col([html.Label("Filter by Pledge Status:", id='status-filter-label'),
+                    dbc.Col([html.Label("Filter by Pledge Status:", id='status-filter-label', style={'color': '#2C3E50'}),
                              dcc.Dropdown(id='status-filter', options=pledge_statuses, value='All', style={'width': '100%'})], width=3),
                 ], style={'margin-bottom': '10px'}),
                 dbc.Row([dbc.Col(dcc.Download(id="download-data-csv"), width=2),
@@ -547,15 +547,15 @@ try:
                 dcc.Loading(id='loading-table', children=[data_table], type='default')
             ]),
             dcc.Tab(label='Glossary', style={'padding': '0'}, children=[
-                html.H2("OFTW Data Glossary", id='glossary-title', style={'textAlign': 'center', 'margin': '10px 0'}),
+                html.H2("OFTW Data Glossary", id='glossary-title', style={'textAlign': 'center', 'margin': '10px 0', 'color': '#2C3E50'}),
                 html.P("This glossary defines key terms and metrics.", id='glossary-description',
-                       style={'textAlign': 'center', 'margin': '0'}),
+                       style={'textAlign': 'center', 'margin': '0', 'color': '#2C3E50'}),
                 html.Div(glossary, id='glossary-table-container', style={'padding': '0', 'margin': '0'})
             ]),
             dcc.Tab(label='AI Assistant', style={'padding': '0'}, children=[
-                html.H2("OFTW AI Assistant", id='ai-title', style={'textAlign': 'center', 'margin': '10px 0'}),
+                html.H2("OFTW AI Assistant", id='ai-title', style={'textAlign': 'center', 'margin': '10px 0', 'color': '#2C3E50'}),
                 html.P("Ask questions about data fields, metrics, or charts.", id='ai-description',
-                       style={'textAlign': 'center', 'margin': '0'}),
+                       style={'textAlign': 'center', 'margin': '0', 'color': '#2C3E50'}),
                 dcc.Input(id='ai-query-input', type='text', placeholder='Enter your question...',
                           style={'width': '80%', 'margin': '10px'}),
                 html.Button('Submit', id='ai-submit-button', n_clicks=0, style={'margin': '10px'}),
@@ -567,33 +567,43 @@ try:
     @app.callback(
         [Output('main-container', 'style'),
          Output('dashboard-title', 'style'),
+         Output('key-metrics-title', 'style'),
          Output('money-moved-title', 'style'),
          Output('money-moved-value', 'style'),
          Output('money-moved-percent', 'style'),
+         Output('money-moved-card', 'style'),
          Output('arr-total-title', 'style'),
          Output('arr-total-value', 'style'),
          Output('arr-total-percent', 'style'),
+         Output('arr-total-card', 'style'),
          Output('attrition-rate-title', 'style'),
          Output('attrition-rate-value', 'style'),
          Output('attrition-rate-percent', 'style'),
+         Output('attrition-rate-card', 'style'),
          Output('active-donors-title', 'style'),
          Output('active-donors-value', 'style'),
          Output('active-donors-percent', 'style'),
+         Output('active-donors-card', 'style'),
          Output('active-pledges-title', 'style'),
          Output('active-pledges-value', 'style'),
          Output('active-pledges-percent', 'style'),
+         Output('active-pledges-card', 'style'),
          Output('chapter-arr-title', 'style'),
          Output('chapter-arr-value', 'style'),
          Output('chapter-arr-percent', 'style'),
+         Output('chapter-arr-card', 'style'),
          Output('total-pledges-title', 'style'),
          Output('total-pledges-value', 'style'),
          Output('total-pledges-percent', 'style'),
+         Output('total-pledges-card', 'style'),
          Output('future-pledges-title', 'style'),
          Output('future-pledges-value', 'style'),
          Output('future-pledges-percent', 'style'),
+         Output('future-pledges-card', 'style'),
          Output('future-arr-title', 'style'),
          Output('future-arr-value', 'style'),
          Output('future-arr-percent', 'style'),
+         Output('future-arr-card', 'style'),
          Output('table-title', 'style'),
          Output('monthly-mm-chart', 'figure'),
          Output('mm-by-platform-chart', 'figure'),
@@ -614,18 +624,20 @@ try:
          Output('ai-title', 'style'),
          Output('ai-description', 'style'),
          Output('chapter-filter-label', 'style'),
-         Output('status-filter-label', 'style')],
+         Output('status-filter-label', 'style'),
+         Output('money-moved-breakdowns-title', 'style'),
+         Output('attrition-analysis-title', 'style')],
         Input('dark-mode-switch', 'value')
     )
     def update_dark_mode(dark_mode):
         if dark_mode:
             background_color = '#1E1E1E'
-            text_color = '#CCCCCC'
+            text_color = '#FFFFFF'  # Use white for better contrast in dark mode
             chart_paper_color = '#2E2E2E'
-            chart_text_color = '#CCCCCC'
-            table_header_bg = '#333333'
+            chart_text_color = '#FFFFFF'
+            table_header_bg = '#4287f5'  # Keep the blue header background
             table_data_bg = '#2E2E2E'
-            table_text_color = '#CCCCCC'
+            table_text_color = '#FFFFFF'  # Change text to white for visibility
             input_bg = '#2E2E2E'
             input_text = '#FFFFFF'
             bar_color = '#3399FF'
@@ -633,6 +645,7 @@ try:
             response_bg = '#2E2E2E'
             table_bg = '#2E2E2E'
             card_bg = '#2E2E2E'
+            card_border = '1px solid #444'
         else:
             background_color = '#ECF0F1'
             text_color = '#2C3E50'
@@ -648,6 +661,7 @@ try:
             response_bg = '#FFFFFF'
             table_bg = '#FFFFFF'
             card_bg = '#FFFFFF'
+            card_border = '1px solid #ddd'
 
         logger.debug(f"Updating charts with dark_mode={dark_mode}, bar_color={bar_color}")
         monthly_mm_fig = px.line(monthly_mm, x='month', y='counterfactual_mm', title='Monthly Counterfactual Money Moved (YTD)',
@@ -703,37 +717,48 @@ try:
         title_style = {'textAlign': 'center', 'fontSize': 18, 'color': text_color}
         value_style = {'textAlign': 'center', 'fontSize': 24, 'fontWeight': 'bold', 'color': text_color}
         percent_style = {'textAlign': 'center', 'fontSize': 14, 'color': text_color}
+        card_style = {'marginBottom': '20px', 'backgroundColor': card_bg, 'border': card_border}
 
         return (
             {'minHeight': '100vh', 'margin': '0', 'padding': '10px', 'backgroundColor': background_color},
             {'textAlign': 'center', 'marginBottom': '30px', 'color': text_color},
+            {'textAlign': 'center', 'marginBottom': '30px', 'color': text_color},
             title_style,
             value_style,
             percent_style,
+            card_style,
             title_style,
             value_style,
             percent_style,
+            card_style,
             title_style,
             value_style,
             percent_style,
+            card_style,
             title_style,
             value_style,
             percent_style,
+            card_style,
             title_style,
             value_style,
             percent_style,
+            card_style,
             title_style,
             value_style,
             percent_style,
+            card_style,
             title_style,
             value_style,
             percent_style,
+            card_style,
             title_style,
             value_style,
             percent_style,
+            card_style,
             title_style,
             value_style,
             percent_style,
+            card_style,
             {'color': text_color},
             monthly_mm_fig,
             mm_by_platform_fig,
@@ -754,8 +779,11 @@ try:
             {'textAlign': 'center', 'margin': '10px 0', 'color': text_color},
             {'textAlign': 'center', 'margin': '0', 'color': text_color},
             {'color': text_color},
-            {'color': text_color}
+            {'color': text_color},
+            {'textAlign': 'center', 'marginBottom': '20px', 'color': text_color},
+            {'textAlign': 'center', 'marginBottom': '20px', 'color': text_color}
         )
+
     @app.callback(
         Output('merged-data-table', 'data'),
         Input('chapter-filter', 'value'),
