@@ -15,7 +15,7 @@ Run the script from your command line:
 
 bash
 Copy
-python "Plotly Project3.py"
+python "OFTW.py"
 Note
 This repository includes only the "Plotly Project3.py" file. Other project files have been excluded.
 
